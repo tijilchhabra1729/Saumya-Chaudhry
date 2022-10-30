@@ -1,0 +1,133 @@
+main {
+    background-image:$color-primary;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.header {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2rem 3rem;
+    width: 35%;
+    margin: 0;
+
+    &__logo {
+        width: 4rem;
+        margin-right: 3rem;
+    }
+
+    &__side-text {
+        font-size: 1.8rem;
+        font-weight: 300;
+    }
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+
+    @include respond(tab-landscape) {
+        display: block;
+        max-height: 100vh;
+    }
+
+    &__text {
+        padding: 2rem 0 2rem 10rem;
+
+        @include respond(tab-landscape) {
+            width: 100%;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        @include respond(small-phone) {
+            text-align: left;
+            padding-left: 5rem;
+        }
+    }
+
+    &__img-container {
+        position: relative;
+        text-align: center;
+        max-height: 100vh;
+
+        @include respond(tab-landscape) {
+            visibility: hidden;
+        }
+    }
+
+    &__img--bg {
+        width: 100%;
+        height: 115%;
+        opacity: .2;
+        position: relative;
+        left: 0;
+        top: -11rem;
+
+        @include respond(big-desktop) {
+            top: -15rem;
+            height: 150%;
+        }
+
+        @include respond(tab-landscape) {
+            visibility: hidden;
+        }
+    }
+
+    &__img--cut {
+        width: 30%;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        @include respond(big-desktop) {
+            width: 25%;
+        }
+
+        @include respond(large-desktop) {
+            width: 20%;
+        }
+
+        @include respond(tab-landscape) {
+            visibility: hidden;
+        }
+
+        &-1 {
+            top: 10%;
+            left: 20%;
+
+            @include respond(big-desktop) {
+                left: 25%;
+            }
+
+            @include respond(large-desktop) {
+                left: 30%;
+            }
+        }
+
+        &-2 {
+            top: 15%;
+            left: 50%;
+        }
+    }
+}
+
+.nav {
+    position: relative;
+    display: flex;
+    top: 1.5rem;
+    left: -10rem;
+
+    @include respond(tab-landscape) {
+        left: 0;
+        top: 0;
+        align-items: center;
+        justify-content: center;
+    }
+
+    @include respond(small-phone) {
+        justify-content: flex-start;
+    }
+}

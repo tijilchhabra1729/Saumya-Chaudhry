@@ -1,0 +1,145 @@
+//variables 
+//colors
+$color-primary: #3F555F;
+$color-primary-dark: #0A0908;
+$color-primary-dark-2: #1e444f;
+$color-primary-translucent: rgba(63, 85, 95, .3);
+
+$color-grey-light-1: #F2F4F3;
+$color-grey-light-2: #E3E3E3;
+
+$color-grey-dark-1: #a7a7a7;
+$color-grey-dark-2: #4a4a4a;
+
+
+$shadow-color: rgba(10, 9, 8, .2);
+
+//shadows
+$shadow-large: 0 2px 5rem  $shadow-color;
+$shadow-small: 0 3px 2rem $shadow-color;
+
+///////////////////////////////////////////
+//mixins 
+
+@mixin respond ($breakpoint) {
+    @if $breakpoint == small-phone {
+        @media (max-width: 22.5em) { @content };    //360px
+    }
+
+    @if $breakpoint == phone {
+        @media (max-width: 37.5em) { @content }; //600px
+    }
+
+    @if $breakpoint == tab-portrait {
+        @media (max-width: 56.25em) { @content }; //900px
+    }
+
+    @if $breakpoint == tab-landscape {
+        @media (max-width: 75em) { @content };    //1200
+    }
+
+
+    @if $breakpoint == big-desktop {
+        @media (min-width: 81.25em) { @content };    //1300
+    }
+
+    @if $breakpoint == large-desktop {
+        @media (min-width: 101.56em) { @content };    //1625px
+    }
+}
+
+@mixin preHead($text) {
+    content: $text;
+    font-weight: 100;
+    letter-spacing: 1.5rem;
+    font-size: 3.5rem;
+    color: $color-grey-dark-1;
+    position: absolute;
+    top: -2rem;
+    left: 5px;
+
+    @include respond(phone) {
+        font-size: 2rem;
+        letter-spacing: .5rem;
+    }
+}
+
+@mixin makeTextVisible {
+    &:hover .about__img {
+        filter: blur(5px) grayscale(.6);
+    }
+
+    @include respond(tab-portrait) {
+        .about__img {
+            filter: blur(5px) grayscale(.6);
+        }
+    }
+
+    &:hover .about__paragraph {
+        opacity: 1;
+        transform: scale(1) translate(-50%, -50%);
+    }
+
+    @include respond(tab-portrait) {
+        .about__paragraph {
+            opacity: 1;
+            transform: scale(1) translate(-50%, -50%);
+        }
+    }
+}
+
+/////////////////////////////////
+//reset
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+
+    @include respond(large-desktop) {
+        font-size: 85%;
+    }
+
+    @include respond(big-desktop) {
+        font-size: 78%;
+    }
+
+    @include respond(tab-landscape) {
+        font-size: 56.25%;
+    }
+
+    @include respond(tab-portrait) {
+        font-size: 50%;
+    }
+
+    @include respond(phone) {
+        font-size: 45%;
+    }
+}
+
+body {
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.footer {
+    background-color: $color-primary;
+    color: $color-grey-light-2;
+    padding: 3rem;
+    text-align: center;
+    margin-top: 5rem;
+
+    &__head {
+        font-size: 1.6rem;
+        text-transform: uppercase;
+    }
+}
