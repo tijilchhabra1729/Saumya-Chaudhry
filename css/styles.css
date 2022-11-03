@@ -432,7 +432,7 @@ main {
   width: 30%; }
 
 .content-1 .heading-primary::before {
-  content: "unexplored";
+  content: "";
   font-weight: 100;
   letter-spacing: 1.5rem;
   font-size: 3.5rem;
@@ -449,7 +449,7 @@ main {
   width: 35%; }
 
 .content-2 .heading-primary::before {
-  content: "into";
+  content: "";
   font-weight: 100;
   letter-spacing: 1.5rem;
   font-size: 3.5rem;
@@ -466,7 +466,7 @@ main {
   width: 55%; }
 
 .content-3 .heading-primary::before {
-  content: "modern";
+  content: "";
   font-weight: 100;
   letter-spacing: 1.5rem;
   font-size: 3.5rem;
@@ -483,7 +483,7 @@ main {
   width: 45%; }
 
 .content-4 .heading-primary::before {
-  content: "rediscover";
+  content: "";
   font-weight: 100;
   letter-spacing: 1.5rem;
   font-size: 3.5rem;
@@ -500,7 +500,7 @@ main {
   width: 35%; }
 
 .content-5 .heading-primary::before {
-  content: "luv";
+  content: "";
   font-weight: 100;
   letter-spacing: 1.5rem;
   font-size: 3.5rem;
@@ -517,7 +517,7 @@ main {
   width: 32%; }
 
 .content-6 .heading-primary::before {
-  content: "redefined";
+  content: "";
   font-weight: 100;
   letter-spacing: 1.5rem;
   font-size: 3.5rem;
